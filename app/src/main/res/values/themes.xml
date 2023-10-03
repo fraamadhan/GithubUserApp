@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.GithubApp" parent="Theme.Material3.DayNight.NoActionBar">
+
+    </style>
+
+    <style name="SplashScreen" parent="Base.Theme.GithubApp">
+        <item name="backgroundColor">@color/black</item>
+    </style>
+
+    <style name="CardView" parent="Base.Theme.GithubApp">
+        <item name="background">@color/warm_blue</item>
+    </style>
+
+    <style name="CardView.card">
+        <item name="fontFamily">serif-monospace</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="Detail" parent="Base.Theme.GithubApp"></style>
+    <style name="Detail.name">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">serif-monospace</item>
+        <item name="android:textColor">@color/pear</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Detail.username" parent="Detail.name">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    
+    <style name="Detail.foll" parent="Detail.name">
+        <item name="android:textSize">16sp</item>
+
+    </style>
+</resources>

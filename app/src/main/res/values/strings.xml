@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Github App</string>
+    <string name="username">"@"%1$s</string>
+    <string name="search_user">Search user</string>
+    <string name="total_followers">%d followers</string>
+    <string name="total_followings">%d following</string>
+    <string name="followers">Followers</string>
+    <string name="followings">Following</string>
+    <string name="favorite_list">Favorite List</string>
+</resources>
