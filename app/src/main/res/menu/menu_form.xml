@@ -5,6 +5,11 @@
         android:id="@+id/fav_list_menu"
         android:icon="@drawable/ic_favorite"
         android:title="@string/favorite_list"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings"
+        app:showAsAction="never"/>
 
 </menu>
