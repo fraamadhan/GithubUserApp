@@ -1,7 +1,6 @@
 package com.example.githubapp.ui.activity
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.annotation.StringRes
@@ -47,35 +46,31 @@ class UsersDetailActivity : AppCompatActivity(){
         }
 
 
-        if(detailUserViewModel.getDetailUser(username!!) != null){
-            detailUserViewModel.getFavoritedUser(username!!).observe(this){
-                    isFavorite->
-                if(isFavorite){
-                    binding.fabFavorite.setImageResource(R.drawable.ic_favorite)
-                }
-                else{
-                    binding.fabFavorite.setImageResource(R.drawable.ic_favorite_border)
-                }
+        detailUserViewModel.getFavoritedUser(username!!).observe(this){
+                isFavorite->
+            if(isFavorite){
+                binding.fabFavorite.setImageResource(R.drawable.ic_favorite)
+            }
+            else{
+                binding.fabFavorite.setImageResource(R.drawable.ic_favorite_border)
             }
         }
 
         binding.apply {
             fabFavorite.setOnClickListener {
-                favoriteUser?.username = detailUserViewModel.getUserName()
-                favoriteUser?.avatarUrl = detailUserViewModel.getAvatarUrl()
+                favoriteUser.username = detailUserViewModel.getUserName()
+                favoriteUser.avatarUrl = detailUserViewModel.getAvatarUrl()
 
                 lifecycleScope.launch {
                     val isFavorited = detailUserViewModel.checkFavorited(username)
                     if(isFavorited){
-                        Log.d("INI IF : ", isFavorited.toString())
                         binding.fabFavorite.setImageResource(R.drawable.ic_favorite_border)
                         detailUserViewModel.deleteUser(favoriteUser)
                         detailUserViewModel.deleteAll()
                     }
                     else{
-                        Log.d("INI ELSE : ", isFavorited.toString())
                         binding.fabFavorite.setImageResource(R.drawable.ic_favorite)
-                        favoriteUser?.isFavorited = true
+                        favoriteUser.isFavorited = true
                         detailUserViewModel.insertFavUser(favoriteUser)
                     }
                 }
@@ -83,7 +78,7 @@ class UsersDetailActivity : AppCompatActivity(){
             }
         }
 
-        detailUserViewModel.getDetailUser(username!!)
+        detailUserViewModel.getDetailUser(username)
 
         val sectionPagerAdapter = SectionPagerAdapter(this, username)
         val viewPager : ViewPager2 = binding.viewPager
@@ -93,10 +88,6 @@ class UsersDetailActivity : AppCompatActivity(){
                 tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
-    }
-
-    private fun getTotalRow(row : Int) : Int{
-        return row
     }
 
     private fun setDataUser(user : GithubUserDetailResponse){
