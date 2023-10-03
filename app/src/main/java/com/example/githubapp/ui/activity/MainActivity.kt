@@ -58,6 +58,11 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intentToFavList)
                         true
                     }
+                    R.id.settings -> {
+                        val intentToSettings = Intent(this@MainActivity, SettingActivity::class.java)
+                        startActivity(intentToSettings)
+                        true
+                    }
                     else-> {
                         false
                     }
