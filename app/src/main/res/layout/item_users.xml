@@ -4,7 +4,6 @@
     android:id="@+id/card_users_list_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/viridian"
     app:cardCornerRadius="7dp"
     android:layout_marginTop="10dp"
     android:layout_gravity="center">

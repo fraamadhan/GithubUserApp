@@ -3,4 +3,29 @@
     <style name="Base.Theme.GithubApp" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="background">@color/warm_blue</item>
     </style>
+
+    <style name="application" parent="Base.Theme.GithubApp">
+        <item name="android:background">@color/gray</item>
+    </style>
+
+    <style name="Toolbar" parent="Base.Theme.GithubApp">
+        <item name="android:background">@color/gray</item>
+        <item name="android:titleTextColor">@color/white</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Material3.TitleLarge</item>
+    </style>
+
+    <style name="CardView" parent="Base.Theme.GithubApp">
+        <item name="android:backgroundTint">@color/warm_gray</item>
+    </style>
+
+    <style name="ImageHeader" parent="Base.Theme.GithubApp">
+        <item name="android:background">@color/gray</item>
+    </style>
+
+    <style name="CardView.card">
+        <item name="fontFamily">serif-monospace</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
 </resources>
